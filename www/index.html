@@ -97,7 +97,12 @@
     <ons-template id="page2.html">
         <ons-page id="page2">
             <div id="cameraview" style="width:100%; height:100%;">
-            <img src="img/circle.png" style="position: absolute; top:70%; left:40%; width:100px; height:100px" >
+              <ons-speed-dial id="backButton" position="left bottom">
+                <ons-fab>
+                  <ons-icon icon="fa-arrow-circle-left" onclick="document.getElementById('navigator').popPage()"></ons-icon>
+                </ons-fab>
+              </ons-speed-dial>
+              <img src="img/circle.png" style="position: absolute; top:70%; left:40%; width:100px; height:100px" >
             </div>
         </ons-page>
     </ons-template>
