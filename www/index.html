@@ -46,10 +46,14 @@
             navigator.pushPage('page2.html');
         });
         
-//        marker2 = new google.maps.Marker({
-//            map: map,
-//            position: {lat: 35.686359, lng: 139.759214}
-//        });
+        marker2 = new google.maps.Marker({
+            map: map,
+            icon: image,
+            position: {lat: 35.686359, lng: 139.759214}
+        });
+        marker2.addListener('click', function() {
+            navigator.pushPage('page2.html');
+        });
 
         avatar = new Avatar(document.getElementById('avatar'), 'img/avatar/char.png');
         var page1 = document.getElementById('page1');
