@@ -41,16 +41,11 @@
         marker1.addListener('click', function() {
             navigator.pushPage('page2.html');
         });
-            
-        marker2 = new google.maps.Marker({
-            map: map,
-            position: {lat: 35.686359, lng: 139.759214}
-        });
-            /*
-        marker2.addListener('click', function() {
-            navigator.pushPage('page2.html');
-        });
-            */
+        
+//        marker2 = new google.maps.Marker({
+//            map: map,
+//            position: {lat: 35.686359, lng: 139.759214}
+//        });
 
         avatar = new Avatar(document.getElementById('avatar'), 'img/avatar/char.png');
         var page1 = document.getElementById('page1');
@@ -80,33 +75,34 @@
 </head>
 <body>
     <ons-navigator id="navigator" page="page1.html"></ons-navigator>
-          <ons-template id="page1.html">
-              
+        <ons-template id="page1.html">
           <ons-page id="page1">
-          <div id="map" style="height:100%"></div>
-          <div id="avatar" style="position: absolute; top:0; left:0; width:70px; height:100px"></div>
-            <ons-speed-dial id="settings" position="left bottom">
-                <ons-fab>
-                    <ons-icon icon="fa-gear"></ons-icon>
-                </ons-fab>
-                <ons-speed-dial-item>
-                    <ons-icon icon="fa-user" onclick="onClickUserIcon()"></ons-icon>
-                </ons-speed-dial-item>
-            </ons-speed-dial>
-            
-        </ons-page>
-    </ons-template>
+              <div id="map" style="height:100%"></div>
+              <div id="avatar" style="position: absolute; top:0; left:0; width:70px; height:100px"></div>
+                <ons-speed-dial id="settings" position="left bottom">
+                    <ons-fab>
+                        <ons-icon icon="fa-gear"></ons-icon>
+                    </ons-fab>
+                    <ons-speed-dial-item>
+                        <ons-icon icon="fa-user" onclick="onClickUserIcon()"></ons-icon>
+                    </ons-speed-dial-item>
+                </ons-speed-dial>
+            </ons-page>
+        </ons-template>
 
     <ons-template id="page2.html">
         <ons-page id="page2">
-            <div id="cameraview" style="width:100%; height:100%;"></div>
+            <div id="cameraview" style="width:100%; height:100%;">
+            <img src="img/circle.png" style="position: absolute; top:70%; left:40%; width:100px; height:100px" >
+            </div>
         </ons-page>
     </ons-template>
+    
     <ons-modal id="user-modal">
         <ons-page>
             <ons-toolbar><div class="center">User Settings</div></ons-toolbar>
             <p><ons-button onclick="document.getElementById('user-modal').hide()">Close</ons-button></p>
-         <ons-list>
+            <ons-list>
                 <ons-list-header>Avatar Skins</ons-list-header>
                 <ons-list-item tappable onclick="changeAvatarSkin('img/avatar/char.png');">Default</ons-list-item>
                 <ons-list-item tappable onclick="changeAvatarSkin('img/avatar/batman.png');">Batman</ons-list-item>
