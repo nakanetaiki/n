@@ -19,53 +19,63 @@
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     <link rel="stylesheet" href="css/style.css">
 
-       <script src="https://maps.googleapis.com/maps/api/js"></script>
-       <script src="js/Avatar.js"></script>
-          <script src="js/CameraView.js"></script>
-          <script src="js/AR.js"></script>
-       <script>
-       var avatar, cameraView;
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/Avatar.js"></script>
+    <script src="js/CameraView.js"></script>
+    <script src="js/AR.js"></script>
+    <script>
+    var avatar, cameraView;
        
     ons.ready(function() {
-            var navigator = document.getElementById('navigator');
+        var navigator = document.getElementById('navigator');
+        
+        var map = new google.maps.Map(document.getElementById('map'), {
+             center: {lat: 35.681298, lng: 139.766247},
+             zoom: 14,
+         });
+
+        marker1 = new google.maps.Marker({
+            map: map,
+            position: {lat: 35.692141, lng: 139.771225}
+        });
+        marker1.addListener('click', function() {
+            navigator.pushPage('page2.html');
+        });
             
-            var map = new google.maps.Map(document.getElementById('map'), {
-                 center: {lat: 35.681298, lng: 139.766247},
-                 zoom: 14,
-             });
+        marker2 = new google.maps.Marker({
+            map: map,
+            position: {lat: 35.686359, lng: 139.759214}
+        });
+            /*
+        marker2.addListener('click', function() {
+            navigator.pushPage('page2.html');
+        });
+            */
 
-            marker = new google.maps.Marker({
-                map: map,
-                position: {lat: 35.692141, lng: 139.771225}
-            });
-                        marker.addListener('click', function() {
-                navigator.pushPage('page2.html');
-            });
-
-                avatar = new Avatar(document.getElementById('avatar'), 'img/avatar/char.png');
-                var page1 = document.getElementById('page1');
-                avatar.move(page1.offsetWidth/2, page1.offsetHeight/2);
-                            
-            navigator.addEventListener('init', function(event) {
-                var page = event.target;
-                if (page.id === 'page2') {
-                    cameraView = new CameraView(document.getElementById("cameraview"), ar);
-                }
-            });
+        avatar = new Avatar(document.getElementById('avatar'), 'img/avatar/char.png');
+        var page1 = document.getElementById('page1');
+        avatar.move(page1.offsetWidth/2, page1.offsetHeight/2);
+        
+        navigator.addEventListener('init', function(event) {
+        var page = event.target;
+        if (page.id === 'page2') {
+            cameraView = new CameraView(document.getElementById("cameraview"), ar);
+            }
+        });
     });
           
-            function onClickUserIcon() {
-            document.getElementById('settings').hideItems();
-            document.getElementById('user-modal').show();
-        };
+    function onClickUserIcon() {
+        document.getElementById('settings').hideItems();
+        document.getElementById('user-modal').show();
+    };
         
-         function changeAvatarSkin(skin) {
-            avatar.changeSkin(skin);
-            document.getElementById('user-modal').hide();
-        };
-        ons.ready(function() {
-            var navigator = document.getElementById('navigator');
-        });
+    function changeAvatarSkin(skin) {
+        avatar.changeSkin(skin);
+        document.getElementById('user-modal').hide();
+    };
+    ons.ready(function() {
+        var navigator = document.getElementById('navigator');
+    });
     </script>
 </head>
 <body>
