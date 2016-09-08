@@ -12,7 +12,16 @@ function drawCorners(context, markers) {
     context.lineWidth = 3;
     for (i = 0; i !== markers.length; ++ i) {
         corners = markers[i].corners;
-        
+        /*  corners[0].x:左上x
+            corners[0].x:左上x
+            corners[1].x:右上x
+            corners[1].y:右上y
+            corners[2].x:右下x
+            corners[2].y:右下y
+            corners[3].x:左下x
+            corners[3].y:左下y
+        */
+        window.alert("corners[0]:"+corners[0].x+" "+corners[0].y+"\n corners[1]:"+corners[1].x+" "+corners[1].y+"\n corners[3]:"+corners[3].x+" "+corners[3].y);
         context.strokeStyle = "red";
         context.beginPath();
         for (j = 0; j !== corners.length; ++ j) {
