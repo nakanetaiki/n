@@ -96,6 +96,9 @@
            imgTop -= moveStep;
            if(imgTop < imgTopEnd){
                imgTop = imgTopStart;
+               document.getElementById('ball').style.top = String(imgTop) + "%";
+               document.getElementById('ball').style.left = String(imgLeft) + "%";
+               return;
            }
            document.getElementById("ball").style.visibility="visible";
            setTimeout("moveImgY()",moveSpeed);
