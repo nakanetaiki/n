@@ -23,6 +23,7 @@
     <script src="js/Avatar.js"></script>
     <script src="js/CameraView.js"></script>
     <script src="js/AR.js"></script>
+    
     <script>
     var avatar, cameraView;
        
@@ -79,6 +80,28 @@
     ons.ready(function() {
         var navigator = document.getElementById('navigator');
     });
+    
+    //ボール投げ  
+       var imgTopStart = 70;
+       var imgTopEnd = 29;
+       var imgTop = imgTopStart;
+       var imgLeft = 40;
+       var moveStep = 1;
+       var moveSpeed = 100;
+        
+        function moveImgY(){
+           console.log("moveImgY");
+           document.getElementById('ball').style.top = String(imgTop) + "%";
+           document.getElementById('ball').style.left = String(imgLeft) + "%";
+           imgTop -= moveStep;
+           if(imgTop < imgTopEnd){
+               imgTop = imgTopStart;
+           }
+           document.getElementById("ball").style.visibility="visible";
+           setTimeout("moveImgY()",moveSpeed);
+       }
+   
+   
     </script>
 </head>
 <body>
@@ -106,7 +129,7 @@
                   <ons-icon icon="fa-arrow-circle-left" onclick="document.getElementById('navigator').popPage()"></ons-icon>
                 </ons-fab>
               </ons-speed-dial>
-              <img src="img/circle.png" style="position: absolute; top:70%; left:40%; width:100px; height:100px" >
+              <img src="img/circle.png" id="ball" style="position: absolute; top:70%; left:40%; width:100px; height:100px" onclick="moveImgY()" >
             </div>
         </ons-page>
     </ons-template>
