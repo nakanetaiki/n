@@ -76,9 +76,6 @@
         avatar.changeSkin(skin);
         document.getElementById('user-modal').hide();
     };
-    ons.ready(function() {
-        var navigator = document.getElementById('navigator');
-    });
     </script>
 </head>
 <body>
@@ -106,7 +103,8 @@
                   <ons-icon icon="fa-arrow-circle-left" onclick="document.getElementById('navigator').popPage()"></ons-icon>
                 </ons-fab>
               </ons-speed-dial>
-              <img src="img/circle.png" style="position: absolute; top:70%; left:40%; width:100px; height:100px" >
+              <!--<img src="img/circle.png" style="position: absolute; top:70%; left:40%; width:100px; height:100px;">-->
+              <img src="img/circle.png" id="pokeball" style="position: absolute; top:70%; left:40%; width:100px; height:100px;" onclick="moveImgBall()">
             </div>
         </ons-page>
     </ons-template>

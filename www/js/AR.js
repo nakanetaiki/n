@@ -46,6 +46,7 @@ function drawCorners(context, markers) {
 //        console.log(corners1);
 //        window.alert(corners1);
     }
+    return corners;
 }
 
 function drawId(context, markers) {

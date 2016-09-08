@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" id="tutorial.pachimongo" version="1.0.0">
   <name>Pachimon GO Tutorial</name>
-  <description/>
+  <description>Made with Monaca (http://monaca.mobi)</description>
   <author/>
   <content src="index.html"/>
   <allow-navigation href="*"/>
@@ -40,4 +40,6 @@
   <preference name="Orientation" value="default"/>
   <preference name="SplashScreenDelay" value="1000"/>
   <preference name="Fullscreen" value="false"/>
+  <preference name="WindowsStorePublisherName" value="My Name"/>
+  <preference name="WindowsStoreIdentityName" value="a2590d0d-39dc-5447-1183-462651d68663"/>
 </widget>

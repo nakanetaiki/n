@@ -25,7 +25,8 @@ CameraView = function(element, onEnterFrame) {
             self.context.drawImage(self.video, 0, 0, self.canvas.width, self.canvas.height);
             if (self.onEnterFrame) {
                 imageData = self.context.getImageData(0, 0, self.canvas.width, self.canvas.height);
-                self.onEnterFrame(self.context, imageData);
+                var corners = self.onEnterFrame(self.context, imageData);
+                window.alert(corners[0].x);
             }
         }
     };
