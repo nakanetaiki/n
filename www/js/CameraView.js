@@ -26,7 +26,7 @@ CameraView = function(element, onEnterFrame) {
             if (self.onEnterFrame) {
                 imageData = self.context.getImageData(0, 0, self.canvas.width, self.canvas.height);
                 var corners = self.onEnterFrame(self.context, imageData);
-                window.alert(corners[0].x);
+                ARFlag = 1;
             }
         }
     };
@@ -66,7 +66,8 @@ CameraView = function(element, onEnterFrame) {
         var id = null;
         for (var i = 0; i != sourceInfos.length; ++i) {
             var sourceInfo = sourceInfos[i];
-            if (sourceInfo.kind === 'video' && sourceInfo.facing === 'environment') {
+//            if (sourceInfo.kind === 'video' && sourceInfo.facing === 'environment') {
+              if (sourceInfo.kind === 'video') {
                 id = sourceInfo.id;
             } else {
                 console.log('Some other kind of source: ' + sourceInfo.kind + ", " + sourceInfo.id);

@@ -21,7 +21,6 @@ function drawCorners(context, markers) {
             corners[3].x:左下x
             corners[3].y:左下y
         */
-        window.alert("corners[0]:"+corners[0].x+" "+corners[0].y+"\n corners[1]:"+corners[1].x+" "+corners[1].y+"\n corners[3]:"+corners[3].x+" "+corners[3].y);
         
         context.strokeStyle = "red";
         context.beginPath();
@@ -46,7 +45,6 @@ function drawCorners(context, markers) {
 //        console.log(corners1);
 //        window.alert(corners1);
     }
-    return corners;
 }
 
 function drawId(context, markers) {
