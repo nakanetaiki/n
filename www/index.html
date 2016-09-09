@@ -25,7 +25,7 @@
     <script src="js/AR.js"></script>
     
     <script>
-    var avatar, cameraView;
+    var avatar, cameraView, getFlag;
        
     ons.ready(function() {
         var navigator = document.getElementById('navigator');
@@ -67,7 +67,11 @@
             }
         });
     });
-          
+    
+    function check_ARmarker(){
+        window.alert("hit!");
+    };
+    
     function onClickUserIcon() {
         document.getElementById('settings').hideItems();
         document.getElementById('user-modal').show();
@@ -86,8 +90,8 @@
        var imgTopEnd = 29;
        var imgTop = imgTopStart;
        var imgLeft = 40;
-       var moveStep = 1;
-       var moveSpeed = 100;
+       var moveStep = 2;
+       var moveSpeed = 50;
         
         function moveImgY(){
            console.log("moveImgY");
@@ -95,10 +99,15 @@
            document.getElementById('ball').style.left = String(imgLeft) + "%";
            imgTop -= moveStep;
            if(imgTop < imgTopEnd){
-               imgTop = imgTopStart;
-               document.getElementById('ball').style.top = String(imgTop) + "%";
-               document.getElementById('ball').style.left = String(imgLeft) + "%";
-               return;
+                if (getFlag === 1 ){
+                    check_ARmarker();
+                }
+                
+                imgTop = imgTopStart;
+                document.getElementById('ball').style.top = String(imgTop) + "%";
+                document.getElementById('ball').style.left = String(imgLeft) + "%";
+                
+                return;
            }
            document.getElementById("ball").style.visibility="visible";
            setTimeout("moveImgY()",moveSpeed);

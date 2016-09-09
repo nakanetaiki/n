@@ -8,6 +8,7 @@ var ar = function(context, imageData) {
 
 function drawCorners(context, markers) {
     var corners, corner, i, j;
+    getFlag = -1;
     
     context.lineWidth = 3;
     for (i = 0; i !== markers.length; ++ i) {
@@ -21,7 +22,8 @@ function drawCorners(context, markers) {
             corners[3].x:左下x
             corners[3].y:左下y
         */
-        window.alert("corners[0]:"+corners[0].x+" "+corners[0].y+"\n corners[1]:"+corners[1].x+" "+corners[1].y+"\n corners[3]:"+corners[3].x+" "+corners[3].y);
+//        window.alert("AAA")
+        getFlag = 1;
         
         context.strokeStyle = "red";
         context.beginPath();

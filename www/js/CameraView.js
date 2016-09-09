@@ -65,7 +65,8 @@ CameraView = function(element, onEnterFrame) {
         var id = null;
         for (var i = 0; i != sourceInfos.length; ++i) {
             var sourceInfo = sourceInfos[i];
-            if (sourceInfo.kind === 'video' && sourceInfo.facing === 'environment') {
+//            if (sourceInfo.kind === 'video' && sourceInfo.facing === 'environment') {
+            if (sourceInfo.kind === 'video') {
                 id = sourceInfo.id;
             } else {
                 console.log('Some other kind of source: ' + sourceInfo.kind + ", " + sourceInfo.id);
